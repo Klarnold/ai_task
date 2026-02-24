@@ -4,6 +4,10 @@ ai task
 
 
 
+to play press F5
+
+
+
 MOVE (player.gd) - WASD
 
 BUTTONS (press\_button.gd)  - step on them
