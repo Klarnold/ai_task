@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cs5blkvjdte8y"]
+
+[ext_resource type="Script" uid="uid://dlhc7oy8menv6" path="res://scripts/interactables/press_button.gd" id="1_n82ca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sfqk2"]
+size = Vector3(1, 0.560791, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n82ca"]
+size = Vector3(1, 0.165, 1)
+
+[node name="press_button" type="Area3D" unique_id=1286219739]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_n82ca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=113147962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2825989, 0)
+shape = SubResource("BoxShape3D_sfqk2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=259904251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103486896, 0)
+mesh = SubResource("BoxMesh_n82ca")

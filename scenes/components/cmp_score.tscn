@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0brudol7uk7o"]
+
+[ext_resource type="Script" uid="uid://cy73i6ixml1yk" path="res://scripts/components/cmp_score.gd" id="1_bspvl"]
+
+[node name="cmp_score" type="Node" unique_id=1474288082]
+script = ExtResource("1_bspvl")

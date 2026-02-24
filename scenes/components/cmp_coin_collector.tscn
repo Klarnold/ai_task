@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bajcttncno14y"]
+
+[ext_resource type="Script" uid="uid://xri3021jpyn5" path="res://scripts/components/cmp_coin_collector.gd" id="1_7gkta"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xekqr"]
+
+[node name="coin_collector" type="Area3D" unique_id=1198330418]
+collision_layer = 2
+script = ExtResource("1_7gkta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2005019103]
+shape = SubResource("CapsuleShape3D_xekqr")

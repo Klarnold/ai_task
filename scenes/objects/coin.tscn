@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5y7yo05l6ttj"]
+
+[ext_resource type="Texture2D" uid="uid://cl4sqmgqtaqdq" path="res://icon.svg" id="1_npg62"]
+[ext_resource type="Script" uid="uid://bu61f1itt3tfd" path="res://scripts/objects/coin.gd" id="1_xxg5f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_npg62"]
+radius = 0.25743634
+
+[node name="coin" type="Area3D" unique_id=1106863904]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_xxg5f")
+speed = 10.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=206311098]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+texture = ExtResource("1_npg62")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1834399220]
+shape = SubResource("SphereShape3D_npg62")

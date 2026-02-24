@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://i1odvtvmxly6"]
+
+[ext_resource type="Script" uid="uid://baw7urvkis2nb" path="res://scripts/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://bajcttncno14y" path="res://scenes/components/cmp_coin_collector.tscn" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://gv7yy37t6jdq" path="res://scripts/components/components_controller.gd" id="2_gmlin"]
+[ext_resource type="PackedScene" uid="uid://d0brudol7uk7o" path="res://scenes/components/cmp_score.tscn" id="4_lvxji"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8afob"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8afob"]
+radius = 2.549073
+
+[node name="player" type="CharacterBody3D" unique_id=628378418]
+collision_layer = 2
+script = ExtResource("1_8afob")
+speed = 5.0
+steering_amount = 12.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=228696979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44468617, 0)
+mesh = SubResource("CapsuleMesh_x7p2l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=456209036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4403448, 0)
+shape = SubResource("CapsuleShape3D_8afob")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=992226856]
+transform = Transform3D(1, 0, 0, 0, 0.8445897, 0.5354141, 0, -0.5354141, 0.8445897, 0, 4.632559, 5.5069976)
+
+[node name="magnetto_area" type="Area3D" parent="." unique_id=1586740456]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="magnetto_area" unique_id=2076957629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88535, 0)
+shape = SubResource("SphereShape3D_8afob")
+
+[node name="components" type="Node3D" parent="." unique_id=1688740995]
+script = ExtResource("2_gmlin")
+
+[node name="coin_collector" parent="components" unique_id=1198330418 instance=ExtResource("2_dovo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0161753, 0)
+collision_mask = 8
+
+[node name="cmp_score" parent="components" unique_id=1474288082 instance=ExtResource("4_lvxji")]

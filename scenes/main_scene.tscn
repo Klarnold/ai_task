@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://co5k4ftu7ar84"]
+
+[ext_resource type="PackedScene" uid="uid://i1odvtvmxly6" path="res://scenes/player/player.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://co6p2h1joxh8r" path="res://scenes/ui/ui_main.tscn" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://5y7yo05l6ttj" path="res://scenes/objects/coin.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://h0rjxynijcxi" path="res://scenes/interactables/ie_door.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://cs5blkvjdte8y" path="res://scenes/interactables/press_button.tscn" id="5_gubc5"]
+[ext_resource type="PackedScene" uid="uid://cawyc8aa3ps61" path="res://scenes/interactables/lever.tscn" id="6_rt2n2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w2twt"]
+sky_top_color = Color(0.6439773, 0.35750452, 0.32138517, 1)
+sky_horizon_color = Color(0.8838737, 0.5789535, 0.11830478, 1)
+ground_bottom_color = Color(0.13559905, 0.1846996, 0.20621786, 1)
+
+[sub_resource type="Sky" id="Sky_pw63i"]
+sky_material = SubResource("ProceduralSkyMaterial_w2twt")
+
+[sub_resource type="Environment" id="Environment_7ykc4"]
+background_mode = 2
+sky = SubResource("Sky_pw63i")
+
+[node name="main_scene" type="Node3D" unique_id=666014923]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1985631577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18067789, 0)
+use_collision = true
+size = Vector3(26.544922, 0.33374023, 20.756836)
+
+[node name="player" parent="." unique_id=628378418 instance=ExtResource("1_w2twt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.115673, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1368453524]
+environment = SubResource("Environment_7ykc4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2094159215]
+transform = Transform3D(0.9291003, 0.088084675, -0.3591848, 0, 0.9712216, 0.23817751, 0.36982784, -0.22129078, 0.9023623, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ui_main" parent="." unique_id=723899019 instance=ExtResource("2_pw63i")]
+
+[node name="coin" parent="." unique_id=1106863904 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1840887, 0.92042303, 0)
+
+[node name="coin2" parent="." unique_id=2077865911 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2670808, 0.92042303, -5.759998)
+
+[node name="coin3" parent="." unique_id=1547455169 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.160466, 0.92042303, 0)
+
+[node name="coin4" parent="." unique_id=1614540937 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1840887, 0.92042303, -4.865697)
+
+[node name="ie_door" parent="." unique_id=1863962502 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1812286, 0, 0)
+
+[node name="ie_door2" parent="." unique_id=1652831129 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5709105, 0, 4.370135)
+
+[node name="press_button" parent="." unique_id=1286219739 node_paths=PackedStringArray("linked_entity") instance=ExtResource("5_gubc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5113769, 0, 0)
+linked_entity = NodePath("../ie_door")
+
+[node name="lever" parent="." unique_id=267670434 node_paths=PackedStringArray("interative_entity") instance=ExtResource("6_rt2n2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5445118, 0, 2.7292857)
+interative_entity = NodePath("../ie_door")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1512697080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8100586, -10.171574)
+use_collision = true
+size = Vector3(26.417725, 2.6201172, 0.26953125)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=533745665]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.432944, 0.8100586, -1.0829215)
+use_collision = true
+size = Vector3(18.234253, 2.6201172, 0.26953125)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=757185895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7996612, 0.0009765625, 6.7863708)
+use_collision = true
+size = Vector3(11.033142, 1.0019531, 0.26953125)
+
+[node name="press_button2" parent="." unique_id=365561460 node_paths=PackedStringArray("linked_entity") instance=ExtResource("5_gubc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1806664, -0.03553605, 4.63354)
+linked_entity = NodePath("../ie_door2")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://co6p2h1joxh8r"]
+
+[ext_resource type="PackedScene" uid="uid://cjblgovp23y87" path="res://scenes/ui/components/gui_score.tscn" id="1_1pib8"]
+
+[node name="ui_main" type="CanvasLayer" unique_id=723899019]
+
+[node name="gui_score" parent="." unique_id=442319967 instance=ExtResource("1_1pib8")]
