@@ -4,9 +4,15 @@ ai task
 
 
 
-MOVE - WASD
+MOVE (player.gd) - WASD
 
-BUTTONS - step on them
+BUTTONS (press\_button.gd)  - step on them
 
-LEVERS - use E to interact with them
+LEVERS (lever.gd) - use E to interact with them
+
+DOORS (ie\_door.gd)
+
+COINS (coin.gd, cmp\_coin\_collector.gd, cmp\_score.gd)
+
+UI (ui\_main.tscn, gui\_score.gd)
 
